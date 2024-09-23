@@ -76,7 +76,7 @@ t_span = [0,cultivation_time];
 ODE_1 = ode;
 ODE_1.ODEFcn = @(t,y,p) ODESys_cont_3(t,y,p,env_cond);
 ODE_1.InitialTime = 0;
-ODE_1.InitialValue = [1,0p,0,10,0.0416,0,0];
+ODE_1.InitialValue = [1,0,0,10,0.0416,0,0];
 ODE_1.Parameters = p;
 ODE_1.Solver = 'ode15s';
 
