@@ -155,7 +155,7 @@ for n=1:1:length(comp_conds)
     % title("1_a");
     hold off;
     if comp_conds(n) == "base"
-        saveas(fig1_a,'Figs/Fig1_b.png');
+        saveas(fig1_a,'Figs/Fig1_b.jpg');
         saveas(fig1_a,'Figs/Fig1_b.fig');
     end
 
@@ -200,7 +200,7 @@ for n=1:1:length(comp_conds)
     % title("Dilution Rate: 0.1 1/{hr} 1_d");
     hold off;
     if comp_conds(n) == "base"
-        saveas(fig1_d,'Figs/Fig1_c.png');
+        saveas(fig1_d,'Figs/Fig1_c.jpg');
         saveas(fig1_d,'Figs/Fig1_c.fig');
     end
 
@@ -330,7 +330,7 @@ for n=1:1:length(comp_conds)
         end
     end
     if comp_conds(n) == "base"
-        saveas(fig2a,'Figs/Fig2_a.png');
+        saveas(fig2a,'Figs/Fig2_a.jpg');
         saveas(fig2a,'Figs/Fig2_a.fig');
     end
 
@@ -444,10 +444,10 @@ for n=1:1:length(comp_conds)
     end
     fig2_bc.Position = [fig2_bc.Position(1),fig2_bc.Position(2),1300,fig2_bc.Position(4)];
     if comp_conds(n) == "high"
-        saveas(fig2_bc,'Figs/Fig2_bc.png');
+        saveas(fig2_bc,'Figs/Fig2_bc.jpg');
         saveas(fig2_bc,'Figs/Fig2_bc.fig');
     elseif comp_conds(n) == "low"
-        saveas(fig2_bc,'Figs/Fig2_de.png');
+        saveas(fig2_bc,'Figs/Fig2_de.jpg');
         saveas(fig2_bc,'Figs/Fig2_de.fig');
     end
 
@@ -532,7 +532,7 @@ for n=1:1:length(comp_conds)
         end
     end
     if comp_conds(n) == "base"
-        saveas(fig1_b,'Figs/Fig1_a.png');
+        saveas(fig1_b,'Figs/Fig1_a.jpg');
         saveas(fig1_b,'Figs/Fig1_a.fig');
     end
 
@@ -588,7 +588,7 @@ for n=1:1:length(comp_conds)
     % title("O2 oscillation 1_e");
     hold off;
     if comp_conds(n) == "base"
-        saveas(fig1_e,'Figs/Fig1_d.png');
+        saveas(fig1_e,'Figs/Fig1_d.jpg');
         saveas(fig1_e,'Figs/Fig1_d.fig');
     end
 
@@ -596,6 +596,7 @@ for n=1:1:length(comp_conds)
     fig1_f.Color = [1,1,1];
     hold on;
     plot(t_res_1_e,y_res_1_e(5,:),'b-','LineWidth',1.5);
+    plot(t_res_1_e,movmean(y_res_1_e(5,:),3000),'r-','LineWidth',3);
     xlabel("Time (hr)"); ylabel("DO Concentration (g/L)");
     % title("O2 oscillation 1_f")
     % ylim([0,Inf]);
@@ -612,6 +613,11 @@ for n=1:1:length(comp_conds)
         catch err
 
         end
+    end
+
+    if comp_conds(n) == "base"
+        saveas(fig1_f,'Figs/FigS3_a.jpg');
+        saveas(fig1_f,'Figs/FigS3_a.fig');
     end
 
     % 3 different strains - O2 limitation
@@ -679,7 +685,7 @@ for n=1:1:length(comp_conds)
         end
     end
     if comp_conds(n) == "base"
-        saveas(fig1_g,'Figs/Fig1_e.png');
+        saveas(fig1_g,'Figs/Fig1_e.jpg');
         saveas(fig1_g,'Figs/Fig1_e.fig');
     end
     
@@ -688,6 +694,7 @@ for n=1:1:length(comp_conds)
     hold on;
     plot(t_res_1_g,y_res_1_g(5,:),'b-','LineWidth',1.5);
     xlabel("Time (hr)"); ylabel("DO Concentration (g/L)");
+    ylim([0,0.008])
     % title("Low kLa 1_h")
     hold off;
 
@@ -702,6 +709,10 @@ for n=1:1:length(comp_conds)
         catch err
 
         end
+    end
+    if comp_conds(n) == "base"
+        saveas(fig1_h,'Figs/FigS3_b.jpg');
+        saveas(fig1_h,'Figs/FigS3_b.fig');
     end
 
     if comp_conds(n) == "base"
@@ -742,7 +753,7 @@ for n=1:1:length(comp_conds)
         end
     end
     if comp_conds(n) == "base"
-        saveas(fig_last,'Figs/Fig1_f.png');
+        saveas(fig_last,'Figs/Fig1_f.jpg');
         saveas(fig_last,'Figs/Fig1_f.fig');
     end
 
@@ -906,18 +917,18 @@ for m=1:1:length(comp_conds)
         end
         if comp_cond == "base"
             if C_G_in_new == 20
-                saveas(fig1_i,'Figs/alpha_lowComp_lowGlu.png')
+                saveas(fig1_i,'Figs/alpha_lowComp_lowGlu.jpg')
                 saveas(fig1_i,'Figs/alpha_lowComp_lowGlu.fig')
             else
-                saveas(fig1_i,'Figs/alpha_lowComp_hiGlu.png')
+                saveas(fig1_i,'Figs/alpha_lowComp_hiGlu.jpg')
                 saveas(fig1_i,'Figs/alpha_lowComp_hiGlu.fig')
             end
         elseif comp_cond == "high"
             if C_G_in_new == 20
-                saveas(fig1_i,'Figs/alpha_hiComp_lowGlu.png')
+                saveas(fig1_i,'Figs/alpha_hiComp_lowGlu.jpg')
                 saveas(fig1_i,'Figs/alpha_hiComp_lowGlu.fig')
             else
-                saveas(fig1_i,'Figs/alpha_hiComp_hiGlu.png')
+                saveas(fig1_i,'Figs/alpha_hiComp_hiGlu.jpg')
                 saveas(fig1_i,'Figs/alpha_hiComp_hiGlu.fig')
             end
         end
@@ -970,6 +981,7 @@ for m=1:1:length(comp_conds)
             yyaxis right;
             plot(t_res_1_k,y_res_1_k(4,:),['g',plot_style_var{k}],'LineWidth',1.5,'MarkerSize',3);
             ylabel("Glucose (g/L)");
+            xlabel("Time (hr)");
             hold off;
         end
         
@@ -1005,18 +1017,18 @@ for m=1:1:length(comp_conds)
         
         if comp_cond == "base"
             if C_G_in_new == 20
-                saveas(fig1_k,'Figs/biomass_lowComp_lowGlu.png')
+                saveas(fig1_k,'Figs/biomass_lowComp_lowGlu.jpg')
                 saveas(fig1_k,'Figs/biomass_lowComp_lowGlu.fig')
             else
-                saveas(fig1_k,'Figs/biomass_lowComp_hiGlu.png')
+                saveas(fig1_k,'Figs/biomass_lowComp_hiGlu.jpg')
                 saveas(fig1_k,'Figs/biomass_lowComp_hiGlu.fig')
             end
         elseif comp_cond == "high"
             if C_G_in_new == 20
-                saveas(fig1_k,'Figs/biomass_hiComp_lowGlu.png')
+                saveas(fig1_k,'Figs/biomass_hiComp_lowGlu.jpg')
                 saveas(fig1_k,'Figs/biomass_hiComp_lowGlu.fig')
             else
-                saveas(fig1_k,'Figs/biomass_hiComp_hiGlu.png')
+                saveas(fig1_k,'Figs/biomass_hiComp_hiGlu.jpg')
                 saveas(fig1_k,'Figs/biomass_hiComp_hiGlu.fig')
             end
         end
@@ -1104,18 +1116,18 @@ for m=1:1:length(comp_conds)
         
         if comp_cond == "base"
             if C_G_in_new == 20
-                saveas(fig1_j,'Figs/beta_lowComp_lowGlu.png')
+                saveas(fig1_j,'Figs/beta_lowComp_lowGlu.jpg')
                 saveas(fig1_j,'Figs/beta_lowComp_lowGlu.fig')
             else
-                saveas(fig1_j,'Figs/beta_lowComp_hiGlu.png')
+                saveas(fig1_j,'Figs/beta_lowComp_hiGlu.jpg')
                 saveas(fig1_j,'Figs/beta_lowComp_hiGlu.fig')
             end
         elseif comp_cond == "high"
             if C_G_in_new == 20
-                saveas(fig1_j,'Figs/beta_hiComp_lowGlu.png')
+                saveas(fig1_j,'Figs/beta_hiComp_lowGlu.jpg')
                 saveas(fig1_j,'Figs/beta_hiComp_lowGlu.fig')
             else
-                saveas(fig1_j,'Figs/beta_hiComp_hiGlu.png')
+                saveas(fig1_j,'Figs/beta_hiComp_hiGlu.jpg')
                 saveas(fig1_j,'Figs/beta_hiComp_hiGlu.fig')
             end
         end
@@ -1332,6 +1344,7 @@ function dydt = ODESys_cont_3(t,y,p,env_cond)
     % 5. O2
     % 6. prod
     % 7. prod mass
+    % 8. avg-O2
 
     env_cond_cell = num2cell(env_cond);
     [dV,V,C_G_in,S_O2,k_L_a,amp,freq,y_shift] = deal(env_cond_cell{:});
